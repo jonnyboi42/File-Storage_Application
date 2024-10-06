@@ -1,0 +1,68 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    position: relative; /* Added to position the menu relative to the navbar */
+}
+
+.navbar-items {
+    display: flex;
+    font-family: "Jura", system-ui;
+    font-weight: 200;
+    font-size: 1.6rem;
+    color: white;
+    gap: 2em;
+    justify-content: center;
+}
+
+.navbar-items > a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-menu-button {
+    display: none;
+}
+
+/* Hamburger Menu */
+.navbar-hamburger-menu {
+    background-color: rgba(56, 54, 54, 0.2); /* Semi-transparent background */
+    color: rgb(255, 255, 255);
+    font-family: "Jura", system-ui;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    
+    font-size: 2rem;
+    padding-left: 0.2em;
+    padding-right: 0.5em;
+    backdrop-filter: blur(10px); /* Creates the blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: add a light border */
+    /* border-radius: 20px; */
+    position: absolute; /* Allows positioning below the button */
+    top: 100%; /* Positions it below the button */
+    left: 0; /* Aligns with the left of the button */
+    margin-top: 0.1em; /* Adds space between the button and menu */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    z-index: 10; /* Ensures the menu appears above other elements */
+}
+
+/* Show hamburger menu on smaller screens */
+@media (max-width: 768px) {
+    .navbar-menu-button {
+        display: block;
+    }
+
+    .navbar-items {
+        display: none;
+    }
+
+    .navbar-hamburger-menu {
+        display: flex;
+    }
+}
+
+.nav-hamburger:hover {
+    cursor: pointer;
+}

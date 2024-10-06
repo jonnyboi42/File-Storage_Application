@@ -1,0 +1,202 @@
+
+.container{    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Jura", system-ui;
+    color: rgb(237, 234, 234);
+
+}
+
+.log-in-container {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, .1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blurring the background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adding depth with shadow */
+   
+}
+
+.log-in-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+    height: auto;
+
+   
+
+}
+
+
+
+
+
+
+.username-and-password{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.username, .password{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+.password{
+    margin-top: 3.2em;
+    width: 100%;
+}
+
+.username > p:nth-of-type(1){
+    font-size: 1.6rem;
+}
+
+.password > p:nth-of-type(1){
+    font-size: 1.6rem;
+}
+
+.username > input:nth-of-type(1){
+    background: none;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 8px;
+    height: 40px;
+    width: 250px;
+    color: white;
+    font-family: "Jura", system-ui;
+    font-size: 1rem;
+    padding-left: .5em;
+
+}
+
+.password> input:nth-of-type(1){
+    background: none;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 8px;
+    height: 40px;
+    width: 250px;
+    font-family: "Jura", system-ui;
+    font-size: 1rem;
+    padding-left: .5em;
+    color: white;
+    
+}
+
+
+/* Submit Button */
+.submit > button:nth-of-type(1){
+    font-family: "Jura", system-ui;
+    background: none;
+    color: white;
+    border: none;
+    border: 1px solid gray;
+    font-size: 2rem;
+    padding-left: 3em;
+    padding-right: 3em;
+    margin-top: 2em;
+    border-radius: 8px;
+    
+    
+    
+}
+
+
+/* Not a Member */
+.not-a-member{
+    margin-top: 2.2em;
+    display: flex;
+    gap: 2em;
+    display: flex;
+    align-items: center;
+}
+
+.not-a-member > p:nth-of-type(1){
+    font-size: 1.3rem;
+}
+
+.not-a-member > button:nth-of-type(1){
+    background: none;
+    color: gray;
+    border: none;
+    border: 1px solid gray;
+    padding: .3em;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-family: "Jura", system-ui;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Existing styles */
+.loading-container {
+    display: none; /* Hide by default */
+    justify-content: center;
+    align-items: center;
+    margin-left: 1em;
+    /* height: 10px; */
+    /* height: 100vh; */
+    /* background-color: #000000; */
+}
+
+.loading-container.active {
+    display: flex; /* Show when active */
+}
+
+.rect {
+    width: 7px;
+    height: 30px;
+    margin: 0 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 0 10px white; /* Glow effect */
+    animation: bounce 1.2s infinite;
+}
+
+.rect:nth-child(1) {
+    animation-delay: -0.24s;
+}
+
+.rect:nth-child(2) {
+    animation-delay: -0.12s;
+}
+
+.rect:nth-child(3) {
+    animation-delay: 0;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+

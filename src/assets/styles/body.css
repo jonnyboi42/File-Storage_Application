@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+    
+    
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('src/assets/imgs/mountain.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -2; /* Ensure the image stays behind the color overlay */
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the color and opacity here */
+    z-index: -1; /* Ensure the overlay stays behind the content but above the image */
+}
+
+
+
+
+
+
+ /* @media screen and(max-width: 800px) {
+    body{
+        height: 100vh !important;
+    }
+ } */

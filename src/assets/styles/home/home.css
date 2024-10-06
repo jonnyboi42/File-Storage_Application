@@ -1,0 +1,673 @@
+.home-page-container{
+    min-height: 100%;
+    margin-left: 5em;
+    margin-right: 5em;   
+    
+}
+
+body::before{
+    background-image: none;
+    background-color: #525253;
+}
+.home-page-middle-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    padding-top: 3em;
+    
+
+}
+
+.home-middle-left{
+    width: 50%;
+}
+
+.home-middle-right{
+    
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+
+    
+}
+
+
+.home-middle-left > p:nth-of-type(1){
+    color: white;
+    font-size: 2.2rem;
+    font-family: "Jura", system-ui;
+}
+
+
+
+
+/* File Display Container */
+.file-display-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    height: auto;
+    min-height: 100px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    width: 100%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect for the glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    overflow: hidden; /* To ensure the pseudo-element is clipped by the border radius */
+    box-sizing: border-box; /* Ensure padding/border are included in width/height */
+}
+
+.file-display-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px; /* Match the border-radius of the container */
+    padding: 1px; /* Adjust to control the border thickness */
+    background: linear-gradient(to right, #408a18, #0de31f); /* Gradient border */
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none; /* Make sure this element doesn't interfere with interaction */
+}
+
+.file-display-headings,
+.file-display-information {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding/border are included in width */
+}
+
+.file-display-headings {
+    font-size: 1.5rem;
+    border-bottom: 1px solid #737272; /* Added solid border for clarity */
+    color: white;
+    font-family: 'NATS';
+
+    padding-right: 8px;
+}
+
+.file-display-information {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 1rem;
+    margin-top: 10px;
+    box-sizing: border-box;
+    
+
+    /* Scrollbar styling */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(169, 170, 169, 0.666) transparent; /* For Firefox */
+}
+
+/* Scrollbar styles for WebKit (Chrome, Safari) */
+.file-display-information::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.file-display-information::-webkit-scrollbar-thumb {
+    background-color: rgba(148, 7, 190, 0.673); /* Scrollbar color */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.file-display-information::-webkit-scrollbar-track {
+    background-color: transparent; /* Background color of the scrollbar track */
+}
+.file-display-information .item {
+    display: flex;
+    margin-bottom: 1em;
+    font-family: "Jura", system-ui;
+    color: rgb(181, 178, 178);
+    box-sizing: border-box; /* Ensure padding/border are included in height */
+}
+
+.file-display-headings p,
+.file-display-information p {
+    flex: 1; /* Make each item take up equal space */
+    text-align: center; /* Center text horizontally */
+}
+
+.file-display-headings {
+    font-size: 1.5rem;
+    border-bottom: 1px solid #737272; /* Added solid border for clarity */
+    color: white;
+    font-family: 'NATS';
+    
+}
+
+.file-display-information {
+    font-size: 1rem; /* Adjust font size if needed */
+    margin-top: 10px; /* Add some spacing if necessary */
+    max-height: 260px;
+}
+
+.items {
+    display: flex;
+    flex-direction: column; /* Ensure the items stack vertically */
+    flex: 1;
+    /* padding-left: 1em; */
+}
+
+.item {
+    display: flex;
+    justify-content: space-between; /* Space out the contents of .item */
+    margin-bottom: 1em;
+    font-family: "Jura", system-ui;
+    color: rgb(181, 178, 178);
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.item p {
+    flex: 1; /* Ensure each <p> element takes up equal space */
+    margin: 0; /* Remove any default margin */
+}
+
+.item a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from .item */
+    flex: 1; /* Ensure the link itself takes up equal space within the <p> */
+    display: inline-block; /* Ensure the link behaves like a block element */
+}
+
+.item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly change background color on hover */
+    transform: scale(1.02); /* Slightly increase size on hover */
+    color: #ffffff; /* Change text color on hover */
+}
+
+.item:hover a {
+    color: #ffffff; /* Ensure the link text color also changes on hover */
+}
+
+
+/* Ensure the file-display-information items are flex containers */
+.file-display-information .item {
+    display: flex;
+    justify-content: space-between; /* Evenly distribute space */
+    align-items: center; /* Vertically center content */
+    margin-bottom: 1em;
+    font-family: "Jura", system-ui;
+    color: rgb(181, 178, 178);
+    box-sizing: border-box;
+}
+
+.file-display-information .item {
+    display: flex;
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 1em;
+    font-family: "Jura", system-ui;
+    color: rgb(181, 178, 178);
+    box-sizing: border-box;
+}
+
+.file-display-information .item p {
+    flex: 1; /* Make sure all <p> elements share the space equally */
+    margin: 0; /* No extra margin */
+    padding: 0; /* No extra padding */
+    white-space: normal; /* Allow the text to wrap */
+    overflow: hidden; /* Hide any overflow */
+    text-overflow: ellipsis; /* Ensure proper overflow handling */
+    word-break: break-word; /* Break words if necessary */
+    min-width: 0; /* Ensure that flex allows shrinking below natural width */
+    text-align: center; /* Center the text in each column */
+}
+
+/* Ensure links inside <p> behave the same */
+.file-display-information .item p a {
+    text-decoration: none;
+    color: inherit;
+    word-wrap: break-word; /* Break words if necessary */
+    white-space: normal; /* Ensure wrapping */
+    display: inline-block; /* Ensure the link behaves like a block element */
+    text-align: center;
+}
+
+/* Hover effects for items */
+.item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+    color: #ffffff;
+}
+
+.item:hover a {
+    color: #ffffff;
+}
+
+
+
+/* Search */
+.search-upload-remove{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4em;
+}
+
+
+.search-form{
+    display: flex;
+    align-items: center;
+    margin-top: 1.5em;
+    padding-bottom: 3em;
+    gap: 1em;
+    
+}
+
+.file-search {
+    font-family: "Jura", system-ui;
+    height: 40px;
+    width: 300px;
+    color: white;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect for the glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Light border to enhance the glass effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    position: relative; /* For pseudo-element positioning */
+    padding: 0 10px; /* Padding inside the input for text alignment */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    
+}
+
+.file-search::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px; /* Match the border-radius of the input */
+    padding: 1px; /* Adjust to control the border thickness */
+    background: linear-gradient(to right, #8726B7, #98F9FF); /* Gradient border */
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none; /* Ensure this element doesn't interfere with interactions */
+}
+
+.file-search-button {
+    
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect for the glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Light border to enhance the glass effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    position: relative; /* For pseudo-element positioning */
+    color: #bdbdbd; /* Text color for contrast */
+    font-size: 1rem; /* Font size */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex; /* Center text inside button */
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px; /* Padding for content spacing */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.file-search-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px; /* Match the border-radius of the button */
+    padding: 1px; /* Adjust to control the border thickness */
+    background: linear-gradient(to right, #8726B7, #98F9FF); /* Gradient border */
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none; /* Ensure this element doesn't interfere with interactions */
+}
+
+.file-search-button:hover {
+    background: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover for a visual effect */
+}
+
+
+
+/* Upload And Remove */
+.upload-and-remove-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1.3em;
+}
+
+
+/* Upload */
+
+.upload-container-content{
+    display: flex;
+    flex-grow: 0;
+    
+    
+    align-items: center;
+    color: rgb(160, 160, 160);
+    font-size: 1.2rem;
+    font-family: Jura;
+    padding: .3em;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect for the glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    overflow: hidden; /* To ensure the pseudo-element is clipped by the border radius */
+    box-sizing: border-box; /* Ensure padding/border are included in width/height */
+
+    gap: 8px;
+    justify-content: center;
+}
+
+.upload-container-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px; /* Match the border-radius of the container */
+    padding: 1px; /* Adjust to control the border thickness */
+    background: linear-gradient(to right, #19b619, #1ba914); 
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none; /* Make sure this element doesn't interfere with interaction */
+}
+
+.arrow-down{
+    color: rgb(243, 242, 244);
+}
+
+.arrow-down:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+.activity{
+    width: 100%;
+
+}
+
+.activity > p:nth-of-type(1){
+    color: white;
+    font-family: Jura;
+    font-weight: 200;
+    font-size: 1.5rem;
+    padding-bottom: .5em;
+}
+
+
+
+/* Right Side Content */
+.activity-items{
+    color: rgb(234, 234, 234);
+    font-family: Jura;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    text-align: center;
+    padding-bottom: 1em;
+    height: auto;
+    min-height: 75px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: .7em;
+    width: 100%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect for the glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    overflow: hidden; /* To ensure the pseudo-element is clipped by the border radius */
+    box-sizing: border-box; /* Ensure padding/border are included in width/height */
+}
+
+.activity-items::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px; /* Match the border-radius of the container */
+    padding: 1px; /* Adjust to control the border thickness */
+    background: linear-gradient(to right, #7310b5, #850abd); /* Gradient border */
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none; /* Make sure this element doesn't interfere with interaction */
+}
+
+
+
+
+
+
+
+
+.storage{
+    margin-top: 3em;
+}
+
+/* Storage */
+.storage > p:nth-of-type(1){
+    font-family: Jura;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 200;
+    padding-bottom: .5em;
+}
+
+.storage-usage-text > p:nth-of-type(1){
+    font-family: "Kodchasan", sans-serif;
+    font-weight: 300;
+}
+
+.storage-usage-data > p:nth-of-type(1){
+     font-family: Jura;
+}
+
+.storage-content{
+    color: rgb(234, 234, 234);
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    text-align: center;
+    height: auto;
+    min-height: 75px;
+    padding-left: 1em;
+    padding-top: .7em;
+    width: 100%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect for the glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    overflow: hidden; /* To ensure the pseudo-element is clipped by the border radius */
+    box-sizing: border-box; /* Ensure padding/border are included in width/height */
+}
+
+.storage-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px; /* Match the border-radius of the container */
+    padding: 1px; /* Adjust to control the border thickness */
+    background: linear-gradient(to right, #7310b5, #850abd); /* Gradient border */
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none; /* Make sure this element doesn't interfere with interaction */
+}
+
+
+.storage-usage-text{
+    
+    padding-right: .5em;
+    
+}
+
+.storage-usage-data{
+    padding-right: .5em;
+    padding-bottom: 1em;
+    color: rgb(185, 182, 182);
+    font-size: .9rem;
+}
+
+
+
+
+
+@media  screen and (max-width:1300px){   
+    .home-page-middle-content{
+        flex-direction: column;
+        gap: 2em;
+    }
+
+
+
+    .home-middle-left{
+        width: 100%;
+        order: 2;
+    }
+
+    .home-middle-right{
+        width: 100%;
+        flex-direction: row;
+        gap: 2em;
+        order: 1;
+    }
+
+    .activity{
+        width: 50%;
+    }
+
+    .storage{
+        width: 50%;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width:750px) {
+    
+    html{
+        font-size: 13px;
+    }
+
+ 
+
+    .home-middle-right{
+        flex-direction: column;
+    }
+    
+    .activity{
+        width: 100%;
+    }
+
+    .storage{
+        width: 100%;
+    }
+
+    .navbar-items >a{
+        display: none;
+    }
+
+    .navbar-menu-button{
+        display: block;
+    }
+
+    .navbar{
+        justify-content: start !important;
+        margin-top: 1em;
+    }
+    .navbar-menu-button{
+        /* height: 100px;
+        width: 200px; */
+        display: block !important;
+        background: none;
+        border: none;
+        color: white;
+
+        
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 620px) {
+    .search-upload-remove{
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .search-form{
+        padding-bottom: 0;
+    }
+
+
+}
+

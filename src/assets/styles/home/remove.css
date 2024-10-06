@@ -1,0 +1,47 @@
+.remove-container-content {
+    display: flex;
+    flex-grow: 0;
+    align-items: center;
+    color: rgb(160, 160, 160);
+    font-size: 1.2rem;
+    font-family: Jura;
+    padding: .3em;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect for the glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    overflow: hidden; /* To ensure the pseudo-element is clipped by the border radius */
+    box-sizing: border-box; /* Ensure padding/border are included in width/height */
+    gap: 15px;
+    justify-content: center;
+}
+
+.remove-container-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px; /* Match the border-radius of the container */
+    padding: 1px; /* Adjust to control the border thickness */
+    background: linear-gradient(to right, #e63946, #f72585); /* Change to a "remove" color gradient */
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none; /* Make sure this element doesn't interfere with interaction */
+}
+
+.trash-icon {
+    color: rgb(243, 242, 244);
+}
+
+.trash-icon:hover {
+    cursor: pointer;
+}
