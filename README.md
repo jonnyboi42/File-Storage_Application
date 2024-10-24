@@ -1,8 +1,24 @@
-# React + Vite
+<img width="1374" alt="image" src="https://github.com/user-attachments/assets/00bcc230-112b-4cbb-bd93-276244607db4">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# File Management System
 
-Currently, two official plugins are available:
+This is a personal project that utilizes Firebase Authentication and Storage. It allows users to upload files, view them, and manage their files directly from the interface. The application is designed to be responsive, ensuring a seamless user experience across different devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **User Authentication**: Secure login and registration using Firebase Authentication.
+- **File Uploading**: Users can easily upload files to Firebase Storage.
+- **File Viewing**: View uploaded files in a user-friendly interface.
+- **Search Functionality**: Search for specific files within the application.
+- **File Management**: Add or delete files directly from the interface.
+
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces.
+- **Firebase**: Provides authentication and cloud storage services.
+
+## Note
+
+This project is for personal use and demonstration purposes only. It is not intended for cloning or public deployment.
+
+
